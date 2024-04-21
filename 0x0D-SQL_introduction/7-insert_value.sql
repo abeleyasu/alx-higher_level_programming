@@ -1,1 +1,4 @@
-INSERT INTO `first_table` (`id`, `name`) VALUES (89, "Best School");
+-- Task: 6. List all rows of the table first_table
+
+-- Listing all rows of table first_table
+SELECT * FROM first_table;
