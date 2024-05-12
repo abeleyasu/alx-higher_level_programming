@@ -1,4 +1,14 @@
 #!/bin/bash
-# This Bash script takes in a URL, sends a POST request to the passed URL, and displays the body of the response
-# Variables email and subject are sent with specified values
-curl -sX POST "$1" -d "email=test@gmail.com&subject=I%20will%20always%20be%20here%20for%20PLD"
+# Usage: ./5-post_params.sh <URL>
+
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <URL>"
+    exit 1
+fi
+
+url="$1"
+email="test@gmail.com"
+subject="I will always be here for PLD"
+
+response=$(curl -X POST -d "email=$email&subject=$subject" "$url")
+echo "$response"
